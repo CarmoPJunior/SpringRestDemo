@@ -3,9 +3,6 @@ package com.example.SpringRestDemo;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
-
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -16,6 +13,8 @@ public class ServletInitializer implements WebApplicationInitializer {
 	
 	@Override
 	public void onStartup(ServletContext sc) throws ServletException {
+		
+		 System.out.println("teste>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.." );
 		
 		AnnotationConfigWebApplicationContext root = 
 		          new AnnotationConfigWebApplicationContext();

@@ -1,9 +1,11 @@
 package com.example.SpringRestDemo;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -13,8 +15,11 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
+@PropertySource("classpath:application.properties")
 //@ComponentScan(basePackages = { "com.example.SpringRestDemo" })
 @ConfigurationPropertiesScan("com.example")
+@EnableJpaRepositories("com.example.SpringRestDemo.repository") 
+@EntityScan("com.example.SpringRestDemo.model")
 public class WebConfig implements WebMvcConfigurer {
  
    @Override

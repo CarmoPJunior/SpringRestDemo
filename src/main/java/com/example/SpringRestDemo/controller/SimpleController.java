@@ -9,13 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SimpleController {
 	
 	
-//    @Value("${spring.application.name}")
-//    String appName;
+    @Value("${spring.application.name}")
+    String appName;
  
     @GetMapping("/")
     public String homePage(Model model) {
-        model.addAttribute("appName", "teste");
-        return "home";
+        model.addAttribute("appName", appName);
+        
+        System.out.println("teste" + appName);
+        return "index";
     }
     
     @GetMapping("/sample")
