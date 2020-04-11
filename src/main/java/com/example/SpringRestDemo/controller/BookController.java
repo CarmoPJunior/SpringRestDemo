@@ -57,7 +57,7 @@ public class BookController {
     public Book updateBook(@RequestBody Book book, @PathVariable Long id) {
     	
         if (book.getId() != id) {
-          throw new BookIdMismatchException();
+          throw new BookIdMismatchException("Id divergente");
         }
         bookRepository.findById(id)
           .orElseThrow(BookNotFoundException::new);
