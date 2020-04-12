@@ -16,14 +16,10 @@ public class SimpleController {
  
     @GetMapping("/")
     public String homePage(Model model) {
+    	
         model.addAttribute("appName", appName);
-        
         System.out.println("teste" + appName);
         return "index";
     }
-    
-    @GetMapping("/sample")
-    public String showForm() {
-        return "sample";
-    }
+   
 }
